@@ -7,7 +7,6 @@ Este repositorio contiene el código fuente del backend para una aplicación de 
 * [Características](#características)  
 * [Tecnologías/Utilizadas](#tecnologías-utilizadas)  
 * [Estructura/Del/Proyecto](#estructura-del-proyecto)  
-* [Requisitos/Previos](#requisitos-previos)  
 * [Configuración/Del/Entorno](#configuración-del-entorno)  
 * [Instalación](#instalación)  
 * [Scripts/Disponibles](#scripts-disponibles)  
@@ -75,13 +74,6 @@ backend/
 ├── tsconfig.json             \# Configuración del compilador de TypeScript.  
 └── .env.example              \# Archivo de ejemplo para variables de entorno.
 
-## **Requisitos Previos**
-
-Antes de comenzar, asegúrate de tener instalado lo siguiente:
-
-* **Node.js** (versión 16.20.1 o superior, según mongoose y express en package-lock.json)  
-* **npm** (Node Package Manager)  
-* **MongoDB** (instancia local o en la nube)
 
 ## **Configuración del Entorno**
 
