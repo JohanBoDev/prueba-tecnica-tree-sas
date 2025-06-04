@@ -4,19 +4,18 @@ Este repositorio contiene el código fuente del backend para una aplicación de 
 
 ## **Tabla de Contenidos**
 
-* [Características](#bookmark=id.13lhj0uy8wdb)  
-* [Tecnologías Utilizadas](#bookmark=id.vtrsdeewelj)  
-* [Estructura del Proyecto](#bookmark=id.p1n3ixeyjnqh)  
-* [Requisitos Previos](#bookmark=id.tnz2ki82vdk2)  
-* [Configuración del Entorno](#bookmark=id.3e6qgfb78h0l)  
-* [Instalación](#bookmark=id.536d5se267ng)  
-* [Scripts Disponibles](#bookmark=id.9adjlg3e4pd)  
-* [Variables de Entorno](#bookmark=id.9j9hl5mwo0ia)  
-* [API Endpoints](#bookmark=id.gbk6rghxi5ma)  
-  * [Tareas](#bookmark=id.thrac2yad5kx)  
-* [Manejo de Errores](#bookmark=id.qitztyo7wcm8)  
-* [Validaciones](#bookmark=id.jkosibe9g1cg)  
-* [Licencia](#bookmark=id.f9jyyozbbxvj)
+* [Características](#características)  
+* [Tecnologías/Utilizadas](#tecnologías-utilizadas)  
+* [Estructura/Del/Proyecto](#estructura-del-proyecto)  
+* [Requisitos/Previos](#requisitos-previos)  
+* [Configuración/Del/Entorno](#configuración-del-entorno)  
+* [Instalación](#instalación)  
+* [Scripts/Disponibles](#scripts-disponibles)  
+* [Variables/De/Entorno](#variables-de-entorno)  
+* [API/Endpoints](#api-endpoints)  
+  * [Tareas](#tareas)  
+* [Manejo/De/Errores](#manejo-de-errores)  
+* [Validaciones](#validaciones)  
 
 ## **Características**
 
