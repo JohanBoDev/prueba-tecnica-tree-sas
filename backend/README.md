@@ -95,8 +95,6 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
    PORT=3000  
    MONGO_URI=mongodb+srv://johanbohorquez406:wUH5hkGFfp5qugAG@cluster-todolist.ybgftqu.mongodb.net/todolist?retryWrites=true&w=majority&appName=cluster-todolist
 
-   Asegúrate de reemplazar nombre-de-tu-base-de-datos con el nombre real de tu base de datos MongoDB. Si estás utilizando un servicio de MongoDB en la nube (como MongoDB Atlas), pega aquí tu cadena de conexión.
-
 ## **Instalación**
 
 Una vez que hayas configurado tu archivo .env, instala las dependencias del proyecto:
