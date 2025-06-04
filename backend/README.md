@@ -121,12 +121,13 @@ Todos los endpoints están prefijados con /api/tareas.
 
 ### **Tareas**
 
-| Método | Endpoint | Descripción |  
-| POST | /api/tareas/crear | Crea una nueva tarea. Requiere titulo, descripcion, fechaLimite, prioridad, categoria en el cuerpo de la solicitud. |  
-| GET | /api/tareas/obtener | Obtiene una lista de tareas con opciones de filtrado, búsqueda, ordenamiento y paginación. |  
-| GET | /api/tareas/obtenerPorId/:id | Obtiene una tarea específica por su ID de MongoDB. |  
-| PUT | /api/tareas/actualizar/:id | Actualiza una tarea existente por su ID. Los campos pueden ser opcionales en el cuerpo. |  
-| DELETE | /api/tareas/eliminar/:id | Elimina lógicamente una tarea (establece activa: false). |
+| Método  | Endpoint                      | Descripción                                                                                         |
+|---------|-------------------------------|-----------------------------------------------------------------------------------------------------|
+| POST    | /api/tareas/crear             | Crea una nueva tarea. Requiere título, descripción, fechaLimite, prioridad y categoría.            |
+| GET     | /api/tareas/obtener           | Obtiene una lista de tareas con filtros, búsqueda, ordenamiento y paginación.                      |
+| GET     | /api/tareas/obtenerPorId/:id  | Obtiene una tarea específica por su ID de MongoDB.                                                 |
+| PUT     | /api/tareas/actualizar/:id    | Actualiza una tarea existente por su ID. Los campos en el cuerpo son opcionales.                   |
+| DELETE  | /api/tareas/eliminar/:id      | Elimina lógicamente una tarea (establece `activa: false`).                                         |
 
 #### **POST /api/tareas/crear**
 
