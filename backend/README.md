@@ -4,19 +4,19 @@ Este repositorio contiene el código fuente del backend para una aplicación de 
 
 ## **Tabla de Contenidos**
 
-* [Características](#Características)  
-* [Tecnologías Utilizadas](#Tecnologías-Utilizadas)  
-* [Estructura del Proyecto](#estructura-del-proyecto)  
-* [Requisitos Previos](#requisitos-previos)  
-* [Configuración del Entorno](#Configuración-del-entorno)  
-* [Instalación](#instalacion)  
-* [Scripts Disponibles](#scripts-disponibles)  
-* [Variables de Entorno](#variables-de-entorno)  
-* [API Endpoints](#api-endpoints)  
-  * [Tareas](#tareas)  
-* [Manejo de Errores](#manejo-de-errores)  
-* [Validaciones](#validaciones)  
-
+* [Características](#bookmark=id.13lhj0uy8wdb)  
+* [Tecnologías Utilizadas](#bookmark=id.vtrsdeewelj)  
+* [Estructura del Proyecto](#bookmark=id.p1n3ixeyjnqh)  
+* [Requisitos Previos](#bookmark=id.tnz2ki82vdk2)  
+* [Configuración del Entorno](#bookmark=id.3e6qgfb78h0l)  
+* [Instalación](#bookmark=id.536d5se267ng)  
+* [Scripts Disponibles](#bookmark=id.9adjlg3e4pd)  
+* [Variables de Entorno](#bookmark=id.9j9hl5mwo0ia)  
+* [API Endpoints](#bookmark=id.gbk6rghxi5ma)  
+  * [Tareas](#bookmark=id.thrac2yad5kx)  
+* [Manejo de Errores](#bookmark=id.qitztyo7wcm8)  
+* [Validaciones](#bookmark=id.jkosibe9g1cg)  
+* [Licencia](#bookmark=id.f9jyyozbbxvj)
 
 ## **Características**
 
@@ -93,7 +93,9 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente:
 2. Crea un archivo .env:  
    Crea un archivo llamado .env en la raíz del directorio backend/ y añade la siguiente variable de entorno:  
    PORT=3000  
-   MONGO_URI=mongodb+srv://johanbohorquez406:wUH5hkGFfp5qugAG@cluster-todolist.ybgftqu.mongodb.net/todolist?retryWrites=true&w=majority&appName=cluster-todolist
+   MONGO\_URI=mongodb+srv://johanbohorquez406:wUH5hkGFfp5qugAG@cluster-todolist.ybgftqu.mongodb.net/todolist?retryWrites=true\&w=majority\&appName=cluster-todolist
+
+   Asegúrate de reemplazar nombre-de-tu-base-de-datos con el nombre real de tu base de datos MongoDB si no estás usando la URI proporcionada.
 
 ## **Instalación**
 
@@ -130,12 +132,11 @@ Todos los endpoints están prefijados con /api/tareas.
 
 ### **Tareas**
 
-| Método | Endpoint | Descripción |
-| :---- | :---- | :---- |
-| POST | /api/tareas/crear | Crea una nueva tarea. Requiere titulo, descripcion, fechaLimite, prioridad, categoria en el cuerpo de la solicitud. |
-| GET | /api/tareas/obtener | Obtiene una lista de tareas con opciones de filtrado, búsqueda, ordenamiento y paginación. |
-| GET | /api/tareas/obtenerPorId/:id | Obtiene una tarea específica por su ID de MongoDB. |
-| PUT | /api/tareas/actualizar/:id | Actualiza una tarea existente por su ID. Los campos pueden ser opcionales en el cuerpo. |
+| Método | Endpoint | Descripción |  
+| POST | /api/tareas/crear | Crea una nueva tarea. Requiere titulo, descripcion, fechaLimite, prioridad, categoria en el cuerpo de la solicitud. |  
+| GET | /api/tareas/obtener | Obtiene una lista de tareas con opciones de filtrado, búsqueda, ordenamiento y paginación. |  
+| GET | /api/tareas/obtenerPorId/:id | Obtiene una tarea específica por su ID de MongoDB. |  
+| PUT | /api/tareas/actualizar/:id | Actualiza una tarea existente por su ID. Los campos pueden ser opcionales en el cuerpo. |  
 | DELETE | /api/tareas/eliminar/:id | Elimina lógicamente una tarea (establece activa: false). |
 
 #### **POST /api/tareas/crear**
@@ -154,7 +155,7 @@ Crea una nueva tarea en la base de datos.
 
 **Respuestas:**
 
-* 201 Created: Tarea creada exitosamente.  
+* **201 Created**: Tarea creada exitosamente.  
   {  
     "\_id": "60d0fe4a7e8e5d0015f8c4b2",  
     "titulo": "Organizar reunión de equipo",  
@@ -169,7 +170,7 @@ Crea una nueva tarea en la base de datos.
     "\_\_v": 0  
   }
 
-* 400 Bad Request: Datos de entrada inválidos (ver [Validaciones](#bookmark=id.dvmostkff92b)).
+* **400 Bad Request**: Datos de entrada inválidos (ver [Validaciones](#bookmark=id.jkosibe9g1cg)).
 
 #### **GET /api/tareas/obtener**
 
@@ -177,20 +178,20 @@ Obtiene una lista paginada y filtrada de tareas.
 
 **Parámetros de Consulta (Query Parameters):**
 
-* estado: Pendiente | Completada (Opcional)  
-* prioridad: Alta | Media | Baja (Opcional)  
-* categoria: Trabajo | Personal | Estudio (Opcional)  
-* buscar: Texto para buscar en titulo o descripcion. (Opcional, búsqueda insensible a mayúsculas/minúsculas)  
-* ordenarPor: fechaLimite | createdAt | updatedAt | prioridad (Opcional, por defecto fechaLimite)  
-* orden: asc | desc (Opcional, por defecto asc)  
-* pagina: Número de página. (Opcional, por defecto 1\)  
-* limite: Número de tareas por página. (Opcional, por defecto 10\)
+* **estado**: Pendiente | Completada (Opcional)  
+* **prioridad**: Alta | Media | Baja (Opcional)  
+* **categoria**: Trabajo | Personal | Estudio (Opcional)  
+* **buscar**: Texto para buscar en titulo o descripcion. (Opcional, búsqueda insensible a mayúsculas/minúsculas)  
+* **ordenarPor**: fechaLimite | createdAt | updatedAt | prioridad (Opcional, por defecto fechaLimite)  
+* **orden**: asc | desc (Opcional, por defecto asc)  
+* **pagina**: Número de página. (Opcional, por defecto 1\)  
+* **limite**: Número de tareas por página. (Opcional, por defecto 10\)
 
 **Ejemplo:** GET /api/tareas/obtener?estado=Pendiente\&prioridad=Alta\&buscar=reunion\&ordenarPor=fechaLimite\&orden=desc\&pagina=1\&limite=5
 
 **Respuestas:**
 
-* 200 OK: Lista de tareas.  
+* **200 OK**: Lista de tareas.  
   {  
     "paginaActual": 1,  
     "totalPaginas": 2,  
@@ -211,7 +212,7 @@ Obtiene una lista paginada y filtrada de tareas.
     \]  
   }
 
-* 400 Bad Request: Parámetros de consulta inválidos.
+* **400 Bad Request**: Parámetros de consulta inválidos.
 
 #### **GET /api/tareas/obtenerPorId/:id**
 
@@ -219,11 +220,11 @@ Obtiene una tarea específica por su ID.
 
 **Parámetros de Ruta:**
 
-* id: El ID de MongoDB de la tarea.
+* **id**: El ID de MongoDB de la tarea.
 
 **Respuestas:**
 
-* 200 OK: Tarea encontrada.  
+* **200 OK**: Tarea encontrada.  
   {  
     "\_id": "60d0fe4a7e8e5d0015f8c4b2",  
     "titulo": "Organizar reunión de equipo",  
@@ -238,8 +239,8 @@ Obtiene una tarea específica por su ID.
     "\_\_v": 0  
   }
 
-* 400 Bad Request: ID no válido.  
-* 404 Not Found: Tarea no encontrada o marcada como inactiva.
+* **400 Bad Request**: ID no válido.  
+* **404 Not Found**: Tarea no encontrada o marcada como inactiva.
 
 #### **PUT /api/tareas/actualizar/:id**
 
@@ -247,7 +248,7 @@ Actualiza los detalles de una tarea existente.
 
 **Parámetros de Ruta:**
 
-* id: El ID de MongoDB de la tarea a actualizar.
+* **id**: El ID de MongoDB de la tarea a actualizar.
 
 Cuerpo de la Solicitud (JSON):  
 Puede contener cualquier combinación de los siguientes campos (todos son opcionales para la actualización):  
@@ -259,7 +260,7 @@ Puede contener cualquier combinación de los siguientes campos (todos son opcion
 
 **Respuestas:**
 
-* 200 OK: Tarea actualizada exitosamente.  
+* **200 OK**: Tarea actualizada exitosamente.  
   {  
     "\_id": "60d0fe4a7e8e5d0015f8c4b2",  
     "titulo": "Organizar reunión de equipo (Actualizado)",  
@@ -274,8 +275,8 @@ Puede contener cualquier combinación de los siguientes campos (todos son opcion
     "\_\_v": 0  
   }
 
-* 400 Bad Request: Datos de entrada inválidos (ver [Validaciones](#bookmark=id.dvmostkff92b)).  
-* 404 Not Found: Tarea no encontrada o marcada como inactiva.
+* **400 Bad Request**: Datos de entrada inválidos (ver [Validaciones](#bookmark=id.jkosibe9g1cg)).  
+* **404 Not Found**: Tarea no encontrada o marcada como inactiva.
 
 #### **DELETE /api/tareas/eliminar/:id**
 
@@ -283,11 +284,11 @@ Realiza una "eliminación lógica" de una tarea, estableciendo su campo activa a
 
 **Parámetros de Ruta:**
 
-* id: El ID de MongoDB de la tarea a eliminar.
+* **id**: El ID de MongoDB de la tarea a eliminar.
 
 **Respuestas:**
 
-* 200 OK: Tarea eliminada lógicamente.  
+* **200 OK**: Tarea eliminada lógicamente.  
   {  
     "mensaje": "Tarea eliminada correctamente",  
     "tarea": {  
@@ -305,14 +306,14 @@ Realiza una "eliminación lógica" de una tarea, estableciendo su campo activa a
     }  
   }
 
-* 400 Bad Request: ID no válido.  
-* 404 Not Found: Tarea no encontrada o ya inactiva.
+* **400 Bad Request**: ID no válido.  
+* **404 Not Found**: Tarea no encontrada o ya inactiva.
 
 ## **Manejo de Errores**
 
 El backend cuenta con un middleware de manejo de errores centralizado (errorHandler.ts) que captura las excepciones y envía respuestas JSON consistentes con un código de estado HTTP y un mensaje de error.
 
-Ejemplo de respuesta de error:
+**Ejemplo de respuesta de error:**
 
 {  
   "error": "Mensaje de error específico o 'Error interno del servidor'"  
@@ -324,7 +325,7 @@ La clase ApiError personalizada permite lanzar errores con códigos de estado HT
 
 Se utiliza express-validator para validar los datos de entrada en las rutas. El middleware validarCampos.ts procesa los errores de validación y envía respuestas con un formato claro que indica qué campos son problemáticos.
 
-Ejemplo de respuesta de error de validación:
+**Ejemplo de respuesta de error de validación:**
 
 {  
   "errores": \[  
@@ -348,3 +349,6 @@ Las validaciones incluyen:
 * Valores permitidos para estado (Pendiente, Completada) (solo para actualización)  
 * Validación de ID de MongoDB (:id en rutas PUT/DELETE/GET por ID)
 
+## **Licencia**
+
+Este proyecto está bajo la Licencia ISC. Consulta el archivo LICENSE (si existe) para más detalles.
