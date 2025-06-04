@@ -5,7 +5,7 @@ Este repositorio contiene el código fuente del backend para una aplicación de 
 ## **Tabla de Contenidos**
 
 * [Características](#Características)  
-* [Tecnologías Utilizadas](#bookmark=id.t1dsgfm08wgu)  
+* [Tecnologías Utilizadas](#Tecnologías Utilizadas)  
 * [Estructura del Proyecto](#bookmark=id.119n4qw2uwip)  
 * [Requisitos Previos](#bookmark=id.c25yabqfs2w9)  
 * [Configuración del Entorno](#bookmark=id.9jwn3331bmzp)  
