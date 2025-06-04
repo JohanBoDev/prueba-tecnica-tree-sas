@@ -9,14 +9,14 @@ Este repositorio contiene el código fuente del backend para una aplicación de 
 * [Estructura del Proyecto](#estructura-del-proyecto)  
 * [Requisitos Previos](#requisitos-previos)  
 * [Configuración del Entorno](#Configuración-del-entorno)  
-* [Instalación](#bookmark=id.dsi7cyb50mmk)  
-* [Scripts Disponibles](#bookmark=id.22j5ja3l0rnz)  
-* [Variables de Entorno](#bookmark=id.axrzf0pxe4w7)  
-* [API Endpoints](#bookmark=id.arnxdldawfmk)  
-  * [Tareas](#bookmark=id.1o7zaq1jf4ml)  
-* [Manejo de Errores](#bookmark=id.ae118ebu0cd0)  
-* [Validaciones](#bookmark=id.dvmostkff92b)  
-* [Licencia](#bookmark=id.8g9tl3m2phm6)
+* [Instalación](#instalacion)  
+* [Scripts Disponibles](#scripts-disponibles)  
+* [Variables de Entorno](#variables-de-entorno)  
+* [API Endpoints](#api-endpoints)  
+  * [Tareas](#tareas)  
+* [Manejo de Errores](#manejo-de-errores)  
+* [Validaciones](#validaciones)  
+
 
 ## **Características**
 
