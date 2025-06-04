@@ -5,7 +5,7 @@ Este repositorio contiene el código fuente del backend para una aplicación de 
 ## **Tabla de Contenidos**
 
 * [Características](#Características)  
-* [Tecnologías Utilizadas](#Tecnologías Utilizadas)  
+* [Tecnologías Utilizadas](#Tecnologías-Utilizadas)  
 * [Estructura del Proyecto](#bookmark=id.119n4qw2uwip)  
 * [Requisitos Previos](#bookmark=id.c25yabqfs2w9)  
 * [Configuración del Entorno](#bookmark=id.9jwn3331bmzp)  
@@ -34,7 +34,7 @@ Este repositorio contiene el código fuente del backend para una aplicación de 
 * **Middleware CORS:** Configurado para permitir solicitudes desde diferentes orígenes.  
 * **Variables de Entorno:** Gestión de configuraciones sensibles a través de archivos .env.
 
-## **Tecnologías Utilizadas**
+## **Tecnologías-Utilizadas**
 
 * **Node.js:** Entorno de ejecución JavaScript.  
 * **Express.js:** Framework web para Node.js.  
