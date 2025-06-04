@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const tareaController_1 = require("../controllers/tareaController");
+const tareaValidator_1 = require("../validators/tareaValidator");
+const validarCampos_1 = require("../middlewares/validarCampos");
+const idValidator_1 = require("../validators/idValidator");
+const router = (0, express_1.Router)();
+router.post('/crear', [...tareaValidator_1.validarTarea, validarCampos_1.validarCampos], tareaController_1.crearTarea);
+router.get('/obtener', tareaController_1.obtenerTareas);
+router.put('/actualizar/:id', [...tareaValidator_1.validarActualizacionTarea, validarCampos_1.validarCampos], tareaController_1.actualizarTarea);
+router.delete('/eliminar/:id', tareaController_1.eliminarTarea);
+router.get('/obtenerPorId/:id', idValidator_1.validarIdMongo, validarCampos_1.validarCampos, tareaController_1.obtenerTareaPorId);
+exports.default = router;
