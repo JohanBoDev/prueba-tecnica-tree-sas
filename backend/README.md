@@ -170,7 +170,7 @@ Crea una nueva tarea en la base de datos.
     "\_\_v": 0  
   }
 
-* **400 Bad Request**: Datos de entrada inválidos (ver [Validaciones](#bookmark=id.jkosibe9g1cg)).
+* **400 Bad Request**: Datos de entrada inválidos (ver [Validaciones](#validaciones)).
 
 #### **GET /api/tareas/obtener**
 
@@ -275,7 +275,7 @@ Puede contener cualquier combinación de los siguientes campos (todos son opcion
     "\_\_v": 0  
   }
 
-* **400 Bad Request**: Datos de entrada inválidos (ver [Validaciones](#bookmark=id.jkosibe9g1cg)).  
+* **400 Bad Request**: Datos de entrada inválidos (ver [Validaciones](#validaciones).  
 * **404 Not Found**: Tarea no encontrada o marcada como inactiva.
 
 #### **DELETE /api/tareas/eliminar/:id**
