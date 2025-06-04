@@ -86,8 +86,6 @@ backend/
    PORT=3000  
    MONGO\_URI=mongodb+srv://johanbohorquez406:wUH5hkGFfp5qugAG@cluster-todolist.ybgftqu.mongodb.net/todolist?retryWrites=true\&w=majority\&appName=cluster-todolist
 
-   Asegúrate de reemplazar nombre-de-tu-base-de-datos con el nombre real de tu base de datos MongoDB si no estás usando la URI proporcionada.
-
 ## **Instalación**
 
 Una vez que hayas configurado tu archivo .env, instala las dependencias del proyecto:
