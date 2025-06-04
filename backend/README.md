@@ -72,7 +72,7 @@ backend/
 ├── package.json              \# Metadatos del proyecto y dependencias.  
 ├── package-lock.json         \# Bloqueo de versiones de dependencias.  
 ├── tsconfig.json             \# Configuración del compilador de TypeScript.  
-└── .env.example              \# Archivo de ejemplo para variables de entorno.
+└── .env             \# Archivo para variables de entorno.
 
 
 ## **Configuración del Entorno**
