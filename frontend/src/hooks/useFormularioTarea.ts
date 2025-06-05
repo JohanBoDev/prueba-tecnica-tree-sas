@@ -1,9 +1,12 @@
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { esquemaTarea } from "../validations/esquemaTarea"
-import type { DatosTarea } from "../validations/esquemaTarea"
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { esquemaTarea } from "../validations/esquemaTarea";
+import type { DatosTarea } from "../validations/esquemaTarea";
 
-export function useFormularioTarea(onSubmit: (data: DatosTarea) => void) {
+export function useFormularioTarea(
+  onSubmit: (data: DatosTarea) => void,
+  valoresIniciales?: Partial<DatosTarea>
+) {
   const {
     register,
     handleSubmit,
@@ -12,7 +15,8 @@ export function useFormularioTarea(onSubmit: (data: DatosTarea) => void) {
   } = useForm<DatosTarea>({
     resolver: zodResolver(esquemaTarea),
     mode: "onTouched",
-  })
+    defaultValues: valoresIniciales, // ⬅️ Aquí asignas los valores iniciales
+  });
 
   return {
     register,
@@ -20,5 +24,5 @@ export function useFormularioTarea(onSubmit: (data: DatosTarea) => void) {
     errores: errors,
     procesarEnvio: handleSubmit(onSubmit),
     reset
-  }
+  };
 }
