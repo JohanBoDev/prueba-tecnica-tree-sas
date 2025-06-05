@@ -14,7 +14,7 @@ Este directorio contiene el código fuente del frontend para la aplicación de g
 - **Visualizar Tareas:** Listado en tarjetas mostrando la información de forma clara.
 - **Editar Tareas:** Modal pre-rellenado para modificar detalles.
 - **Eliminar Tareas:** Eliminación lógica (soft delete) desde la interfaz.
-- **Marcar como Completadas:** Cambio de estado entre "Pendiente" y "Completada".
+- **Marcar como Completadas:** Cambio de estado de "Pendiente" a "Completada".
 
 ### 🔎 Filtrado y Búsqueda Avanzados
 - **Búsqueda Dinámica** por título o descripción.
@@ -93,7 +93,7 @@ frontend/
 
 - Node.js (v18.x o superior)
 - npm (v8.x o superior) o yarn
-- Backend disponible en `http://localhost:3000/api`
+- Backend disponible en `http://localhost:3000 o https://prueba-tecnica-tree-sas.onrender.com/`
 
 ## 🚀 Instalación y Configuración
 
@@ -111,7 +111,7 @@ frontend/
 
 3. Configura el archivo `.env`:
    ```env
-   VITE_API_URL=http://localhost:3000/api
+   VITE_API_URL=https://prueba-tecnica-tree-sas.onrender.com/
    ```
 
 ## 🧪 Ejecución y Pruebas
@@ -134,7 +134,7 @@ npm run preview
 
 ### Pruebas
 ```bash
-npm test             # Ejecuta Jest (por ahora)
+npm test             # Ejecuta Jest 
 npm run test:watch   # Modo observador con Jest
 npm run test:vitest  # Si se habilita en package.json
 ```
