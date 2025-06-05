@@ -13,7 +13,7 @@ export const ModalCrearTarea = ({ visible, cerrar, modo, tarea }: Props) => {
   if (!visible) return null
 
   return (
-    <div className="fixed inset-0 z-50 bg-transparent backdrop-blur-sm flex items-center justify-center">
+    <div className="fixed p-5 inset-0 z-50 bg-transparent backdrop-blur-sm flex items-center justify-center">
       <div className=" w-full max-w-xl relative">
         <button
           onClick={cerrar}

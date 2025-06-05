@@ -124,13 +124,14 @@ export const TarjetaTarea: FC<Props> = ({
           </svg>
           <p className="mr-1">La fecha limite es: </p>
 
-          {/* Modificación aquí: */}
-          {new Date(fechaLimite).toLocaleDateString("es-ES", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-            timeZone: "UTC", // Asegura que la fecha se formatee como UTC
-          })}
+          <span data-testid="task-due-date">
+            {new Date(fechaLimite).toLocaleDateString("es-ES", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+              timeZone: "UTC",
+            })}
+          </span>
         </span>
         <span
           className={`flex items-center font-medium ${currentPriorityStyle.text}`}

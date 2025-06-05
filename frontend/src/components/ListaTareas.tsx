@@ -65,6 +65,7 @@ export const ListaTareas = ({
           <select
             value={filtros.categoria}
             onChange={(e) => setFiltros.setCategoria(e.target.value)}
+            aria-label="Categoría"
             className="bg-[#111827] focus:outline-none w-full"
           >
             <option value="">Todas las Categorías</option>
@@ -83,6 +84,7 @@ export const ListaTareas = ({
           <select
             value={filtros.estadoFiltro}
             onChange={(e) => setFiltros.setEstadoFiltro(e.target.value)}
+            aria-label="Estado"
             className="bg-[#111827] focus:outline-none w-full"
           >
             <option value="">Todos los Estados</option>
@@ -97,6 +99,7 @@ export const ListaTareas = ({
           <select
             value={filtros.prioridad}
             onChange={(e) => setFiltros.setPrioridad(e.target.value)}
+            aria-label="Prioridad"
             className="bg-[#111827] focus:outline-none w-full"
           >
             <option value="">Todas las Prioridades</option>
@@ -115,11 +118,11 @@ export const ListaTareas = ({
             <select
               value={filtros.ordenarPor}
               onChange={(e) => setFiltros.setOrdenarPor(e.target.value)}
+              aria-label="Ordenar por"
               className="flex-1 bg-[#111827] text-white focus:outline-none rounded-md border border-transparent px-2 py-1"
             >
               <option value="fechaLimite">Fecha Límite</option>
               <option value="fechaCreacion">Fecha Creación</option>
-              <option value="ultimaActualizacion">Última Actualización</option>
             </select>
           </div>
 
@@ -129,6 +132,7 @@ export const ListaTareas = ({
             title={`Ordenar ${
               filtros.ascendente ? "Ascendente" : "Descendente"
             }`}
+            data-testid="sort-direction-button"
           >
             <SortAsc
               className={`${

@@ -6,7 +6,9 @@ import type { DatosTarea } from "../validations/esquemaTarea";
 export function useFormularioTarea(
   onSubmit: (data: DatosTarea) => void,
   valoresIniciales?: Partial<DatosTarea>
-) {
+) 
+
+{
   const {
     register,
     handleSubmit,
