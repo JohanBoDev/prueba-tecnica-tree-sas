@@ -15,7 +15,7 @@ export function useFormularioTarea(
   } = useForm<DatosTarea>({
     resolver: zodResolver(esquemaTarea),
     mode: "onTouched",
-    defaultValues: valoresIniciales, // ⬅️ Aquí asignas los valores iniciales
+    defaultValues: valoresIniciales, 
   });
 
   return {

@@ -1,6 +1,8 @@
 import { useFormularioTarea } from "../hooks/useFormularioTarea";
 import { usoTareasStore } from "../store/useTareasStore";
 import type { Tarea } from "../types/Tarea";
+import type { DatosTarea } from "../validations/esquemaTarea";
+
 interface FormularioTareaProps {
   tarea?: Tarea;
   modo?: "crear" | "editar";
@@ -15,11 +17,24 @@ export const FormularioTarea = ({
   const { register, procesarEnvio, errores, reset } = useFormularioTarea(
     async (datos) => {
       try {
+        // Si se está en modo editar, y se borró un campo, lo reemplazamos por el valor original
+        const datosFinales: DatosTarea =
+          modo === "editar" && tarea
+            ? {
+                titulo: datos.titulo.trim() || tarea.titulo,
+                descripcion: datos.descripcion.trim() || tarea.descripcion,
+                fechaLimite: datos.fechaLimite || tarea.fechaLimite,
+                prioridad: datos.prioridad || tarea.prioridad,
+                categoria: datos.categoria || tarea.categoria,
+              }
+            : datos;
+
         if (modo === "editar" && tarea) {
-          await usoTareasStore.getState().actualizarTarea(tarea._id, datos);
+          await usoTareasStore.getState().actualizarTarea(tarea._id, datosFinales);
         } else {
-          await usoTareasStore.getState().agregarTarea(datos);
+          await usoTareasStore.getState().agregarTarea(datosFinales);
         }
+
         reset();
         onCancelar?.();
       } catch (error) {
@@ -38,6 +53,7 @@ export const FormularioTarea = ({
         {modo === "editar" ? "Editar Tarea" : "Crear Nueva Tarea"}
       </h2>
 
+      {/* Título */}
       <div>
         <label className="block mb-1 text-sm font-medium">Título</label>
         <input
@@ -51,6 +67,7 @@ export const FormularioTarea = ({
         )}
       </div>
 
+      {/* Descripción */}
       <div>
         <label className="block mb-1 text-sm font-medium">Descripción</label>
         <textarea
@@ -59,12 +76,11 @@ export const FormularioTarea = ({
           className="w-full bg-slate-800 border border-violet-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         {errores.descripcion && (
-          <p className="text-red-400 text-xs mt-1">
-            {errores.descripcion.message}
-          </p>
+          <p className="text-red-400 text-xs mt-1">{errores.descripcion.message}</p>
         )}
       </div>
 
+      {/* Fecha Límite */}
       <div>
         <label className="block mb-1 text-sm font-medium">Fecha Límite</label>
         <input
@@ -74,12 +90,11 @@ export const FormularioTarea = ({
           className="w-full bg-slate-800 border border-violet-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         {errores.fechaLimite && (
-          <p className="text-red-400 text-xs mt-1">
-            {errores.fechaLimite.message}
-          </p>
+          <p className="text-red-400 text-xs mt-1">{errores.fechaLimite.message}</p>
         )}
       </div>
 
+      {/* Prioridad */}
       <div>
         <label className="block mb-1 text-sm font-medium">Prioridad</label>
         <select
@@ -92,12 +107,11 @@ export const FormularioTarea = ({
           <option value="Baja">Baja</option>
         </select>
         {errores.prioridad && (
-          <p className="text-red-400 text-xs mt-1">
-            {errores.prioridad.message}
-          </p>
+          <p className="text-red-400 text-xs mt-1">{errores.prioridad.message}</p>
         )}
       </div>
 
+      {/* Categoría */}
       <div>
         <label className="block mb-1 text-sm font-medium">Categoría</label>
         <select
@@ -110,12 +124,11 @@ export const FormularioTarea = ({
           <option value="Estudio">Estudio</option>
         </select>
         {errores.categoria && (
-          <p className="text-red-400 text-xs mt-1">
-            {errores.categoria.message}
-          </p>
+          <p className="text-red-400 text-xs mt-1">{errores.categoria.message}</p>
         )}
       </div>
 
+      {/* Botones */}
       <div className="flex justify-end gap-4 pt-4">
         {modo === "editar" && (
           <button
