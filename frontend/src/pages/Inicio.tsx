@@ -27,8 +27,9 @@ export const Inicio = () => {
   const tareasPorPagina = 3; // 3 tareas por página
 
   useEffect(() => {
-    obtenerTodas(); // sin paginación desde el backend
+    obtenerTodas(); 
   }, [obtenerTodas]);
+
   // Resetear a la página 1 cuando se cambien los filtros
   useEffect(() => {
     setPaginaActual(1);
@@ -83,7 +84,7 @@ export const Inicio = () => {
         </button>
       </div>
 
-      {/* Lista o mensaje */}
+      {/* Lista de tareas con filtro */}
       <section className="max-w-5xl mx-auto space-y-4">
         <ListaTareas
           tareas={tareasPaginadas}

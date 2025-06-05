@@ -4,7 +4,7 @@ import type { Tarea } from "../types/Tarea"
 interface Props {
   visible: boolean
   cerrar: () => void
-    modo?: "crear" | "editar"; // ✅ Nueva prop
+    modo?: "crear" | "editar"; 
   tarea?: Tarea;   
 
 }
@@ -21,7 +21,6 @@ export const ModalCrearTarea = ({ visible, cerrar, modo, tarea }: Props) => {
         >
           ✕
         </button>
-        {/* Pasa las props aquí */}
         <FormularioTarea
           modo={modo}
           tarea={tarea}

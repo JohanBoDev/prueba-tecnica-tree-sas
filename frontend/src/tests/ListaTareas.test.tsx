@@ -48,7 +48,7 @@ describe("ListaTareas", () => {
     onEditar: mockOnEditar,
     paginaActual: 1,
     setPaginaActual: mockSetPaginaActual,
-    totalPaginas: 1, // Por simplicidad, asumimos una sola página inicialmente
+    totalPaginas: 1, // Por simplicidad, asumo una sola página inicialmente
     filtros: {
       busqueda: "",
       categoria: "",
@@ -71,13 +71,11 @@ describe("ListaTareas", () => {
   });
 
   test("renderiza todas las TarjetaTarea para las tareas dadas", () => {
-      // screen.debug(); // Descomentar para depurar el DOM
     render(<ListaTareas {...commonProps} />);
-    // Verificamos la presencia de los títulos de las tareas mockeadas
+    // Verifico la presencia de los títulos de las tareas mockeadas
     expect(screen.getByText("Tarea 1 Trabajo")).toBeInTheDocument();
     expect(screen.getByText("Tarea 2 Personal")).toBeInTheDocument();
     expect(screen.getByText("Otra Tarea Estudio")).toBeInTheDocument();
-    // Podemos ser más robustos usando el data-testid del mock de TarjetaTarea
     expect(screen.getAllByTestId(/tarjeta-tarea-/)).toHaveLength(mockTareas.length);
   });
 
@@ -97,7 +95,7 @@ describe("ListaTareas", () => {
 
   test("llama a setCategoria al seleccionar una categoría", () => {
     render(<ListaTareas {...commonProps} />);
-    // Ahora buscamos por el nuevo aria-label
+    // Ahora busco por el nuevo aria-label
     const selectCategoria = screen.getByRole("combobox", { name: /Categoría/i });
     fireEvent.change(selectCategoria, { target: { value: "Trabajo" } });
     expect(mockSetFiltros.setCategoria).toHaveBeenCalledTimes(1);
@@ -106,7 +104,7 @@ describe("ListaTareas", () => {
 
   test("llama a setEstadoFiltro al seleccionar un estado", () => {
     render(<ListaTareas {...commonProps} />);
-    // Buscamos por el nuevo aria-label
+    // busco por el nuevo aria-label
     const selectEstado = screen.getByRole("combobox", { name: /Estado/i });
     fireEvent.change(selectEstado, { target: { value: "Completada" } });
     expect(mockSetFiltros.setEstadoFiltro).toHaveBeenCalledTimes(1);
@@ -115,7 +113,7 @@ describe("ListaTareas", () => {
 
   test("llama a setPrioridad al seleccionar una prioridad", () => {
     render(<ListaTareas {...commonProps} />);
-    // Buscamos por el nuevo aria-label
+    // busco por el nuevo aria-label
     const selectPrioridad = screen.getByRole("combobox", { name: /Prioridad/i });
     fireEvent.change(selectPrioridad, { target: { value: "Alta" } });
     expect(mockSetFiltros.setPrioridad).toHaveBeenCalledTimes(1);
@@ -124,7 +122,7 @@ describe("ListaTareas", () => {
 
   test("llama a setOrdenarPor al seleccionar una opción de ordenamiento", () => {
     render(<ListaTareas {...commonProps} />);
-    // Ahora que has añadido el aria-label="Ordenar por" al select, esta consulta será más robusta
+    // Ahora que he añadido el aria-label="Ordenar por" al select, esta consulta será más robusta
     const selectOrdenarPor = screen.getByRole("combobox", { name: /Ordenar por/i });
     fireEvent.change(selectOrdenarPor, { target: { value: "fechaCreacion" } });
     expect(mockSetFiltros.setOrdenarPor).toHaveBeenCalledTimes(1);
@@ -135,13 +133,11 @@ test("llama a setAscendente al hacer clic en el botón de ordenamiento (asc/desc
   // Primer renderizado con estado inicial (ascendente: true)
   const { rerender } = render(<ListaTareas {...commonProps} />);
   
-  // SOLUCIÓN FINAL: Usamos data-testid para seleccionar el botón de forma única
   let botonOrdenar = screen.getByTestId("sort-direction-button");
 
   // Primer clic: debería cambiar a false
   fireEvent.click(botonOrdenar);
   expect(mockSetFiltros.setAscendente).toHaveBeenCalledTimes(1);
-  // *** CORRECCIÓN AQUÍ: Espera 'false' Y 'una función' ***
   expect(mockSetFiltros.setAscendente).toHaveBeenCalledWith(expect.any(Function)); 
 
   mockSetFiltros.setAscendente.mockClear();
@@ -157,7 +153,6 @@ test("llama a setAscendente al hacer clic en el botón de ordenamiento (asc/desc
   fireEvent.click(botonOrdenar);
 
   expect(mockSetFiltros.setAscendente).toHaveBeenCalledTimes(1);
-  // *** CORRECCIÓN AQUÍ: Espera 'true' Y 'una función' ***
   expect(mockSetFiltros.setAscendente).toHaveBeenCalledWith(expect.any(Function));
 });
 

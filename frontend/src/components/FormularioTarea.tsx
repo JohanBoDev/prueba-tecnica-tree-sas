@@ -17,7 +17,7 @@ export const FormularioTarea = ({
   const { register, procesarEnvio, errores, reset } = useFormularioTarea(
     async (datos) => {
       try {
-        // Si se está en modo editar, y se borró un campo, lo reemplazamos por el valor original
+        // Si se está en modo editar, y se borró un campo, se reemplaza por el valor original
         const datosFinales: DatosTarea =
           modo === "editar" && tarea
             ? {
@@ -105,9 +105,9 @@ export const FormularioTarea = ({
 
       {/* Prioridad */}
       <div>
-        <label htmlFor="prioridad-select" className="block mb-1 text-sm font-medium">Prioridad</label> {/* Añadir htmlFor */}
+        <label htmlFor="prioridad-select" className="block mb-1 text-sm font-medium">Prioridad</label> 
         <select
-          id="prioridad-select" // Añadir id
+          id="prioridad-select" 
           {...register("prioridad")}
           className="w-full bg-slate-800 border border-indigo-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
         >
@@ -125,9 +125,9 @@ export const FormularioTarea = ({
 
       {/* Categoría */}
       <div>
-        <label htmlFor="categoria-select" className="block mb-1 text-sm font-medium">Categoría</label> {/* Añadir htmlFor */}
+        <label htmlFor="categoria-select" className="block mb-1 text-sm font-medium">Categoría</label> 
         <select
-          id="categoria-select" // Añadir id
+          id="categoria-select"
           {...register("categoria")}
           className="w-full bg-slate-800 border border-indigo-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600"
         >
