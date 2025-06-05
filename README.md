@@ -1,6 +1,6 @@
 # 🛠️ Proyecto de Gestión de Tareas: Tecnologías Implementadas
 
-Este proyecto de gestión de tareas se ha desarrollado utilizando un stack tecnológico moderno y robusto, dividido en un **backend** y un **frontend** con características específicas para asegurar una experiencia de usuario fluida y una gestión de datos eficiente.
+Este proyecto de gestión de tareas como prueba tecnica de la empresa Tree-a Enterprises SAS se ha desarrollado utilizando un stack tecnológico moderno y robusto, dividido en un **backend** y un **frontend** con características específicas para asegurar una experiencia de usuario fluida y una gestión de datos eficiente.
 
 ---
 
