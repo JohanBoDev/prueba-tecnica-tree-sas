@@ -187,8 +187,3 @@ Pruebas implementadas para componentes clave como:
 \* \`ListaTareas\`  
 \* \`ModalCrearTarea\`  
 \* \`TarjetaTarea\`
-
-
-
-
-
