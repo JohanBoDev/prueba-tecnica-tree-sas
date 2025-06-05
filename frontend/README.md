@@ -2,7 +2,6 @@
 
 Este directorio contiene el código fuente del frontend para la aplicación de gestión de tareas. Desarrollado con React, TypeScript, Vite y Tailwind CSS, este frontend ofrece una interfaz de usuario moderna, interactiva y responsiva para gestionar tareas de manera eficiente.
 
-[![ISC License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## ✨ Características Principales
 
@@ -159,15 +158,4 @@ Componentes con pruebas:
 - `ModalCrearTarea`
 - `TarjetaTarea`
 
-## 💡 Mejoras Futuras
 
-- Virtualización de listas
-- Reordenamiento drag-and-drop
-- Soporte para temas (claro/oscuro)
-- Internacionalización (i18n)
-- Pruebas end-to-end (E2E)
-- Mejoras de accesibilidad (a11y)
-
-## 📜 Licencia
-
-Este proyecto está bajo la [Licencia ISC](https://opensource.org/licenses/ISC).
