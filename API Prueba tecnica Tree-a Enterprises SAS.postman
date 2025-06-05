@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "07594ef8-7106-4df5-b501-7a47f28920c5",
+		"name": "API Prueba tecnica Tree-a Enterprises SAS",
+		"description": "StartFragment\n\n## 📝 Descripción de la API – Prueba Técnica Tree-a Enterprises S.A.S.\n\nEsta API RESTful permite gestionar tareas de manera eficiente como parte del proyecto de evaluación técnica para Tree-a Enterprises S.A.S. Está desarrollada con Node.js, Express y MongoDB, implementando buenas prácticas como validación, control de errores y arquitectura modular.\n\n### ✨ Funcionalidades implementadas\n\n- **Crear tarea** (`POST /api/tareas/crear`)\n    \n- **Obtener todas las tareas** (`GET /api/tareas/obtener`)\n    \n- **Obtener tarea por ID** (`GET /api/tareas/obtenerPorId/:id`)\n    \n- **Actualizar tarea** (`PUT /api/tareas/actualizar/:id`)\n    \n- **Eliminar tarea (Soft Delete)** (`DELETE /api/tareas/eliminar/:id`)\n    \n\n### ⚙️ Tecnologías del backend\n\n- **Node.js + Express.js** con TypeScript\n    \n- **MongoDB + Mongoose**\n    \n- Validaciones con `express-validator`\n    \n- Variables de entorno con `dotenv`\n    \n- CORS habilitado\n    \n- Recarga en caliente con `ts-node-dev`\n    \n\n### 🔐 Seguridad\n\nActualmente, esta API **no requiere autenticación** (modo libre de pruebas).\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36435827"
+	},
+	"item": [
+		{
+			"name": "Crear tarea",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n  {\r\n    \"titulo\": \"Envaaaaaiar propuesta de diseño\",\r\n    \"descripcion\": \"Preparar el PDFs con la presentación para el cliente.\",\r\n    \"fechaLimite\": \"2025-06-10\",\r\n    \"prioridad\": \"Alta\",\r\n    \"categoria\": \"Trabajo\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://prueba-tecnica-tree-sas.onrender.com/api/tareas/crear"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las tareas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://prueba-tecnica-tree-sas.onrender.com/api/tareas/obtener"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener tarea por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/tareas/obtenerPorId/683fb868e2ef28399b8a520c3"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar tarea",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nombre\":\"4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/categorias/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar tarea",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/api/tareas/eliminar/683fbc4fac1aa7a3d46fb772"
+			},
+			"response": []
+		}
+	]
+}
