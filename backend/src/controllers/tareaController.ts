@@ -31,7 +31,6 @@ export const crearTarea = async (
   }
 };
 
-
 export const obtenerTareas = async (
   req: Request,
   res: Response,
@@ -173,22 +172,3 @@ export const eliminarTarea = async (
   }
 };
 
-export const obtenerTareaPorId = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-): Promise<void> => {
-  try {
-    const { id } = req.params;
-
-    const tarea = await Tarea.findOne({ _id: id, activa: true });
-
-    if (!tarea) {
-      throw new ApiError('Tarea no encontrada', 404);
-    }
-
-    res.status(200).json(tarea);
-  } catch (error) {
-    next(error);
-  }
-};

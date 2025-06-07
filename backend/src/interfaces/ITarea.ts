@@ -7,3 +7,5 @@ export interface ITarea {
   estado: 'Pendiente' | 'Completada';
   activa: boolean;
 }
+
+
