@@ -2,85 +2,82 @@
 
 Este directorio contiene el código fuente del frontend para la aplicación de gestión de tareas. Desarrollado con React, TypeScript, Vite y Tailwind CSS, este frontend ofrece una interfaz de usuario moderna, interactiva y responsiva para gestionar tareas de manera eficiente.
 
-[![ISC License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## ✨ Características Principales
 
-### 🎨 Interfaz de Usuario Moderna e Intuitiva
+### 🖥️ Interfaz de Usuario Moderna e Intuitiva
 - Diseño limpio y responsivo utilizando Tailwind CSS.
 - Componentes reutilizables para una experiencia de usuario consistente.
 
-### ✅ Gestión Completa de Tareas
+### 🗂️ Gestión Completa de Tareas
 - **Crear Tareas:** Modal con formulario para agregar nuevas tareas, incluyendo título, descripción, fecha límite, prioridad (Alta, Media, Baja) y categoría (Trabajo, Personal, Estudio).
-- **Visualizar Tareas:** Listado de tareas en formato de tarjetas individuales, mostrando toda la información relevante de forma clara.
-- **Editar Tareas:** Funcionalidad para modificar los detalles de tareas existentes a través de un modal pre-rellenado.
-- **Eliminar Tareas:** Opción para "eliminar" tareas (esto se traduce en una eliminación lógica en el backend).
-- **Marcar como Completadas:** Permite cambiar el estado de las tareas entre "Pendiente" y "Completada".
+- **Visualizar Tareas:** Listado en tarjetas mostrando la información de forma clara.
+- **Editar Tareas:** Modal pre-rellenado para modificar detalles.
+- **Eliminar Tareas:** Eliminación lógica (soft delete) desde la interfaz.
+- **Marcar como Completadas:** Cambio de estado de "Pendiente" a "Completada".
 
-### 🔍 Filtrado y Búsqueda Avanzados
-- **Búsqueda Dinámica:** Campo para buscar tareas por título o descripción.
-- **Filtros Múltiples:**
-  - Por categoría (Trabajo, Personal, Estudio, Todas).
-  - Por estado (Pendiente, Completada, Todos).
-  - Por prioridad (Alta, Media, Baja, Todas).
+### 🔎 Filtrado y Búsqueda Avanzados
+- **Búsqueda Dinámica** por título o descripción.
+- **Filtros por:**
+  - Categoría: Trabajo, Personal, Estudio o Todas.
+  - Estado: Pendiente, Completada o Todos.
+  - Prioridad: Alta, Media, Baja o Todas.
 
-### 📅 Ordenamiento de Tareas
-- Opción para ordenar las tareas por fecha límite o fecha de creación.
-- Posibilidad de alternar entre orden ascendente y descendente.
+### 🧮 Ordenamiento y Paginación
+- Ordenar tareas por fecha límite o de creación, de forma ascendente o descendente.
+- Paginación mostrando 3 tareas por página.
 
-### 📄 Paginación
-- Navegación eficiente mostrando 3 tareas por página.
+### ⚙️ Gestión de Estado Global
+- Implementado con Zustand para operaciones CRUD centralizadas.
 
-### 📦 Gestión de Estado Global
-- Zustand para un manejo de estado centralizado y eficiente.
+### ✅ Validación de Formularios
+- Validación con React Hook Form y esquemas de Zod.
 
-### 🧾 Validación de Formularios
-- React Hook Form y Zod para validación de esquemas.
+### 🔔 Notificaciones
+- Feedback visual mediante React Hot Toast.
 
-### 🔔 Notificaciones Toast
-- React Hot Toast para feedback visual en operaciones.
-
-### 💡 Iconografía Clara
-- Lucide React para iconos llamativos y funcionales.
+### 🎨 Iconografía Clara
+- Iconos proporcionados por Lucide React.
 
 ### 🧪 Pruebas Unitarias y de Integración
-- Vitest y React Testing Library para pruebas.
-- Configuración para jsdom y jest-dom matchers.
+- Realizadas con Vitest y React Testing Library.
+- Soporte para jsdom y matchers de jest-dom.
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **React** (v19)
-- **TypeScript** (v5.8.3)
-- **Vite** (v6.3.5)
-- **Tailwind CSS** (v4.1.8)
-- **Zustand** (v5.0.5)
-- **React Hook Form** (v7.57.0)
-- **Zod** (v3.25.50)
-- **Axios** (v1.9.0)
-- **Lucide React** (v0.512.0)
-- **React Hot Toast** (v2.5.2)
-- **Vitest** (v3.2.1)
-- **React Testing Library**, **jest-dom**, **user-event**
-- **Jest** (v29.7.0), **ts-jest** (v29.3.4)
-- **ESLint** (v9.25.0)
+- **UI:** React (v19)
+- **Lenguaje:** TypeScript (v5.8.3)
+- **Bundler:** Vite (v6.3.5)
+- **Estilos:** Tailwind CSS (v4.1.8) mediante `@tailwindcss/vite`
+- **Estado:** Zustand (v5.0.5)
+- **Formularios:** React Hook Form (v7.57.0)
+- **Validación:** Zod (v3.25.50)
+- **Cliente HTTP:** Axios (v1.9.0)
+- **Iconos:** Lucide React (v0.512.0)
+- **Notificaciones:** React Hot Toast (v2.5.2)
+- **Pruebas:**
+  - Vitest (v3.2.1)
+  - React Testing Library (`@testing-library/react`, `jest-dom`, `user-event`)
+  - Jest (v29.7.0), `ts-jest` (v29.3.4)
+- **Linting:** ESLint (v9.25.0) con `typescript-eslint`
 
 ## 📂 Estructura del Proyecto
 
-```bash
+```
 frontend/
 ├── public/                    # Archivos estáticos
 ├── src/
-│   ├── components/            # Componentes reutilizables
+│   ├── components/            # Componentes de React
 │   ├── hooks/                 # Hooks personalizados
 │   ├── pages/                 # Vistas principales
-│   ├── services/              # Comunicación con backend
-│   ├── store/                 # Zustand store
+│   ├── services/              # Interacción con API
+│   ├── store/                 # Zustand Store
 │   ├── tests/                 # Pruebas unitarias
-│   ├── types/                 # Tipos TypeScript
-│   ├── validations/           # Esquemas de validación Zod
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── ...otros archivos
+│   ├── types/                 # Tipos TS
+│   ├── validations/           # Validaciones con Zod
+│   ├── App.css, App.tsx
+│   ├── index.css, main.tsx
+│   └── vite-env.d.ts
 ├── .eslintrc.cjs
 ├── index.html
 ├── jest.config.js
@@ -94,58 +91,71 @@ frontend/
 
 ## 📋 Prerrequisitos
 
-- Node.js v18+
-- npm v8+ o yarn
-- Backend en ejecución en `http://localhost:3000/api`
+- Node.js (v18.x o superior)
+- npm (v8.x o superior) o yarn
+- Backend disponible en `http://localhost:3000 o https://prueba-tecnica-tree-sas.onrender.com/`
 
-## 🚀 Instalación y Ejecución
+## 🚀 Instalación y Configuración
 
-```bash
-cd frontend
-npm install
-```
+1. Clona el repositorio y navega al frontend:
+   ```bash
+   cd frontend
+   ```
 
-Crear `.env`:
-```
-VITE_API_URL=http://localhost:3000/api
-```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
+
+3. Configura el archivo `.env`:
+   ```env
+   VITE_API_URL=https://prueba-tecnica-tree-sas.onrender.com/
+   ```
+
+## 🧪 Ejecución y Pruebas
 
 ### Desarrollo
 ```bash
 npm run dev
 ```
+Accesible generalmente en `http://localhost:5173`.
 
-### Producción
+### Build de Producción
 ```bash
 npm run build
+```
+
+### Previsualización Local
+```bash
 npm run preview
 ```
 
-## 🧪 Pruebas
-
+### Pruebas
 ```bash
-npm test              # Usa Jest por defecto
-npm run test:watch    # Watch mode con Jest
-npm run test:vitest   # Alternativa usando Vitest
+npm test             # Ejecuta Jest 
+npm run test:watch   # Modo observador con Jest
+npm run test:vitest  # Si se habilita en package.json
 ```
 
-Config: `vite.config.ts`, `jest.config.js`, `tests/setup.ts`
-
-## 🧹 Linting
-
-```bash
-npm run lint
+Scripts sugeridos para usar Vitest:
+```json
+"scripts": {
+  "test:vitest": "vitest",
+  "test:vitest:watch": "vitest --watch"
+}
 ```
 
-## 💡 Mejoras Futuras
+Archivos clave para pruebas:
+- `vite.config.ts`
+- `src/tests/setup.ts`
+- `jest.config.js`
 
-- Virtualización de listas
-- Arrastrar y soltar tareas
-- Soporte de temas (claro/oscuro)
-- i18n
-- Pruebas E2E (Cypress o Playwright)
-- Accesibilidad (a11y)
+Componentes con pruebas:
+- `FormularioTarea`
+- `ListaTareas`
+- `ModalCrearTarea`
+- `TarjetaTarea`
 
-## 📜 Licencia
 
-Este proyecto está bajo la [Licencia ISC](https://opensource.org/licenses/ISC).
