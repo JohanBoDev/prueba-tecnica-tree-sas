@@ -21,10 +21,7 @@ export async function obtenerTareas(params = {}) {
   });
   return respuesta.data;
 }
-export async function obtenerTareaPorId(id: string) {
-  const respuesta = await clienteAxios.get(`/tareas/obtenerPorId/${id}`)
-  return respuesta.data
-}
+
 
 export async function actualizarTarea(id: string, data: Partial<DatosTarea>) {
   const respuesta = await clienteAxios.put(`/tareas/actualizar/${id}`, data)
